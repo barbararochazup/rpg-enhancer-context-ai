@@ -1,0 +1,17 @@
+langchain~=0.3.27
+sentence-transformers
+faiss-cpu
+python-dotenv~=1.1.1
+numpy
+pip~=24.2
+distro~=1.9.0
+langchain-text-splitters~=0.3.9
+protobuf~=6.32.0
+pillow~=11.3.0
+Jinja2~=3.1.6
+google-api-python-client~=2.179.0
+attrs~=25.3.0
+langchain-community~=0.3.27
+pypdf>=4.0.0
+langchain-google-genai~=2.1.9
+langchain-core~=0.3.74
