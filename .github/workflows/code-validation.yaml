@@ -27,13 +27,20 @@ jobs:
         run: |
           pip install -r ${{ matrix.project }}/requirements.txt
 
-      - name: Lint (autoflake, isort, black, flake8)
-        run: |
-          pip install autoflake isort black flake8
-          autoflake --in-place --remove-unused-variables --remove-all-unused-imports -r ${{ matrix.project }}
-          isort ${{ matrix.project }}
-          black --check ${{ matrix.project }}
-          flake8 ${{ matrix.project }}
+      - name: Install linters and formatters
+        run: pip install autoflake isort black flake8
+
+      - name: Autoflake (remove unused imports/vars)
+        run: autoflake --in-place --remove-unused-variables --remove-all-unused-imports -r ${{ matrix.project }}
+
+      - name: isort (organize imports)
+        run: isort ${{ matrix.project }}
+
+      - name: Black (check formatting)
+        run: black --check ${{ matrix.project }}
+
+      - name: Flake8 (lint)
+        run: flake8 ${{ matrix.project }}
 
       - name: Run tests
         run: |
