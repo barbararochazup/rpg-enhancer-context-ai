@@ -64,7 +64,7 @@ Antes de executar a aplicação, você precisa criar a base de dados vetorial pa
 Adicione seus arquivos de lore (ex: Tormenta20.pdf) na pasta data/.
 Execute o script de indexação, para mais informaçoes acesse:
 
-![Rpg-Box-Indexer](rpg-book-indexer)
+[Rpg-Box-Indexer](rpg-book-indexer)
 
 Este script irá processar o documento, dividi-lo em chunks, gerar os embeddings e salvar um índice FAISS em vector_stores/Tormenta20_index. 
 
