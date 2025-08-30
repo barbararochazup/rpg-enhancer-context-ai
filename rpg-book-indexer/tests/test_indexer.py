@@ -3,8 +3,7 @@ import logging
 import pytest
 from reportlab.pdfgen import canvas
 
-from indexer import (create_embeddings, create_vector_store, load_docs,
-                     split_chunks)
+from indexer import create_embeddings, create_vector_store, load_docs, split_chunks
 
 
 def test_load_docs_pdf(tmp_path):
@@ -21,7 +20,13 @@ def test_load_docs_pdf(tmp_path):
     c.drawString(
         100,
         750,
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec molestie, ex id auctor aliquet, quam erat laoreet nibh, eu ultricies neque nibh et purus. Quisque in nisl non metus convallis aliquam vel id lacus. Nam felis felis, cursus eget commodo id, posuere sed nulla. Cras malesuada condimentum lacus, quis condimentum nisl vehicula sed. Duis condimentum sodales sapien, eu rutrum dolor rhoncus eget. Quisque accumsan id quam et sagittis. Aliquam faucibus orci et orci faucibus ultricies.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. "
+        "Donec molestie, ex id auctor aliquet, quam erat laoreet nibh, eu ultricies neque nibh et purus. "
+        "Quisque in nisl non metus convallis aliquam vel id lacus. "
+        "Nam felis felis, cursus eget commodo id, posuere sed nulla. "
+        "Cras malesuada condimentum lacus, quis condimentum nisl vehicula sed."
+        "Duis condimentum sodales sapien, eu rutrum dolor rhoncus eget. "
+        "Quisque accumsan id quam et sagittis. Aliquam faucibus orci et orci faucibus ultricies.",
     )
     c.save()
     pages = load_docs(
