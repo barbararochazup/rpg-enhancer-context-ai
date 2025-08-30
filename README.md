@@ -58,7 +58,6 @@ GOOGLE_API_KEY=
 SEARCH_ENGINE_ID=
 ```
 
-
 ### Construção da Base de Conhecimento (RAG)
 Antes de executar a aplicação, você precisa criar a base de dados vetorial para o seu sistema de RPG.
 Adicione seus arquivos de lore (ex: Tormenta20.pdf) na pasta data/.
