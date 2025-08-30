@@ -38,9 +38,9 @@ O núcleo desta POC é a combinação da arquitetura de agentes (Controlador,  P
 ## Como executar
 
 ### Pré-requisitos
-Python 3.9+
-Uma chave de API para um serviço de LLM (ex: OpenAI)
-Documentos do sistema de RPG que você deseja usar (em formato .txt ou .pdf)
+- Python 3.9+
+- Uma chave de API para um serviço de LLM (ex: OpenAI)
+- Documentos do sistema de RPG que você deseja usar (em formato .txt ou .pdf)
 
 ### Instalação
 
@@ -65,7 +65,7 @@ Adicione seus arquivos de lore (ex: Tormenta20.pdf) na pasta data/.
 Execute o script de indexação, para cada arquivo:
 
 ```
-python3 build_rag_index.py --file "data/Tormenta20.pdf"
+python3 rag_index.py --file "data/dagerhearthRPG.pdf"
 ```
 
 Este script irá processar o documento, dividi-lo em chunks, gerar os embeddings e salvar um índice FAISS em vector_stores/Tormenta20_index. 
