@@ -85,7 +85,8 @@ def create_embeddings() -> HuggingFaceEmbeddings:
     except Exception as e:
         logging.error(f"Erro ao criar embeddings com o modelo '{model_name}': {e}")
         raise ValueError(
-            f"Não foi possível carregar o modelo de embeddings '{model_name}'. Verifique se o nome está correto e se o modelo está disponível."
+            f"Não foi possível carregar o modelo de embeddings '{model_name}'. "
+            f"Verifique se o nome está correto e se o modelo está disponível."
         ) from e
 
 
