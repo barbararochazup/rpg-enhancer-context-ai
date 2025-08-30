@@ -78,6 +78,5 @@ target/
 profile_default/
 
 .env
-vector_stores
-data
+resources/*
 .idea

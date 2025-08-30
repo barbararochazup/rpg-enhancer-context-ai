@@ -27,7 +27,7 @@ def search_lore(query: str, rpg_system: str) -> str:
     db = FAISS.load_local(index_path, embeddings_model)
 
     # Realiza a busca por similaridade
-    results = db.similarity_search(query, k=2)  # Pega os 2 chunks mais relevantes
+    results = db.similarity_search(query, k=5)  # Pega os 2 chunks mais relevantes
 
     # Concatena os resultados em uma única string de contexto
     context = "\n".join([doc.page_content for doc in results])
