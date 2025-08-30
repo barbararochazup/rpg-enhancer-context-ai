@@ -27,9 +27,6 @@ jobs:
         run: |
           pip install -r ${{ matrix.project }}/requirements.txt
 
-      - name: Install linters and formatters
-        run: pip install autoflake isort black flake8
-
       - name: Autoflake (remove unused imports/vars)
         run: autoflake --in-place --remove-unused-variables --remove-all-unused-imports -r ${{ matrix.project }}
 
