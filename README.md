@@ -62,11 +62,9 @@ SEARCH_ENGINE_ID=
 ### Construção da Base de Conhecimento (RAG)
 Antes de executar a aplicação, você precisa criar a base de dados vetorial para o seu sistema de RPG.
 Adicione seus arquivos de lore (ex: Tormenta20.pdf) na pasta data/.
-Execute o script de indexação, para cada arquivo:
+Execute o script de indexação, para mais informaçoes acesse:
 
-```
-python3 rag_index.py --file "data/dagerhearthRPG.pdf"
-```
+[Rpg-Box-Indexer](rpg-book-indexer)
 
 Este script irá processar o documento, dividi-lo em chunks, gerar os embeddings e salvar um índice FAISS em vector_stores/Tormenta20_index. 
 
