@@ -1,0 +1,41 @@
+name: PR Validation
+
+on:
+  pull_request:
+    branches: [ main, master, develop ] # ajuste conforme seu fluxo
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        project:
+          # - . raiz
+          - rpg-book-indexer
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install -r ${{ matrix.project }}/requirements.txt
+
+      - name: Lint (autoflake, isort, black, flake8)
+        run: |
+          pip install autoflake isort black flake8
+          autoflake --in-place --remove-unused-variables --remove-all-unused-imports -r ${{ matrix.project }}
+          isort ${{ matrix.project }}
+          black --check ${{ matrix.project }}
+          flake8 ${{ matrix.project }}
+
+      - name: Run tests
+        run: |
+          pip install pytest
+          pytest ${{ matrix.project }}
